@@ -29,7 +29,9 @@ Technologies used to build this project.
 ## Planning and Development Process
 
 ```
-30 Aug 2024 - Started repo for project.
+30 Aug 2024 - Started repo for project. Plan what information I want out of self-made filter.
+
+31 Aug 2024 - Building filter
 ```
 
 ## Acknowledgments
