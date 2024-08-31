@@ -1,6 +1,7 @@
 const venuesList = [];
 const allSportsNames = [];
 const masterList = [];
+const sample = [];
 const venues =
   "https://activesg.gov.sg/api/trpc/programme.getProgrammeVenues?input=%7B%22json%22%3Anull%2C%22meta%22%3A%7B%22values%22%3A%5B%22undefined%22%5D%7D%7D";
 
@@ -56,13 +57,13 @@ getSports()
     console.log(error);
   });
 const getFilteredActivities = () => {
-  // for (let i = 0; i < allSportsNames.length; i++) {
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < allSportsNames.length; i++) {
+    // for (let i = 0; i < 1; i++) {
     getActivities(allSportsNames[i])
       .then((data) => {
         // console.log(JSON.stringify(data.result.data.json.programmes));
         for (let i = 0; i < data.result.data.json.programmes.length; i++) {
-          console.log(data.result.data.json.programmes[i]);
+          // console.log(data.result.data.json.programmes[i]);
 
           // check if startdatetime is a weekend or not
           // if it is, push it to masterList
@@ -77,7 +78,18 @@ const getFilteredActivities = () => {
             masterList.push(data.result.data.json.programmes[i]);
           }
         }
-        console.log(masterList);
+        for (let i = 0; i < masterList.length; i++) {
+          sample.push({
+            name: masterList[i].title,
+            venue: masterList[i].venue.name,
+            startDateTime: masterList[i].sessions[0].startDateTime,
+            endDateTime:
+              masterList[i].sessions[masterList[i].sessions.length - 1]
+                .endDateTime,
+          });
+
+          console.log(sample);
+        }
       })
       .catch((error) => {
         console.log(error);
