@@ -89,6 +89,8 @@ const getFilteredActivities = () => {
               endDateTime:
                 masterList[i].sessions[masterList[i].sessions.length - 1]
                   .endDateTime,
+              maxCapacity: masterList[i].maxCapacity,
+              participants: masterList[i].participantCount,
             });
           }
           //write sample into a file with fs
