@@ -91,6 +91,7 @@ const getFilteredActivities = () => {
                   .endDateTime,
               maxCapacity: masterList[i].maxCapacity,
               participants: masterList[i].participantCount,
+              intensity: masterList[i].intensityLevel,
             });
           }
           //write sample into a file with fs
