@@ -1,3 +1,4 @@
+const fs = require("fs");
 const venuesList = [];
 const allSportsNames = [];
 const masterList = [];
@@ -78,17 +79,26 @@ const getFilteredActivities = () => {
             masterList.push(data.result.data.json.programmes[i]);
           }
         }
-        for (let i = 0; i < masterList.length; i++) {
-          sample.push({
-            name: masterList[i].title,
-            venue: masterList[i].venue.name,
-            startDateTime: masterList[i].sessions[0].startDateTime,
-            endDateTime:
-              masterList[i].sessions[masterList[i].sessions.length - 1]
-                .endDateTime,
+        // console.log(masterList.length);
+        if (masterList.length === 145) {
+          for (let i = 0; i < masterList.length; i++) {
+            sample.push({
+              name: masterList[i].title,
+              venue: masterList[i].venue.name,
+              startDateTime: masterList[i].sessions[0].startDateTime,
+              endDateTime:
+                masterList[i].sessions[masterList[i].sessions.length - 1]
+                  .endDateTime,
+            });
+          }
+          //write sample into a file with fs
+          fs.writeFile("sample.json", JSON.stringify(sample), (err) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("File written successfully\n");
+            }
           });
-
-          console.log(sample);
         }
       })
       .catch((error) => {
