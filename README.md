@@ -32,6 +32,8 @@ Technologies used to build this project.
 30 Aug 2024 - Started repo for project. Plan what information I want out of self-made filter.
 
 31 Aug 2024 - Building filter
+
+14 Sep 2024 - Build backend for API
 ```
 
 ## Acknowledgments
