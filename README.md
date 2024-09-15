@@ -34,6 +34,8 @@ Technologies used to build this project.
 31 Aug 2024 - Building filter
 
 14 Sep 2024 - Build backend for API
+
+15 Sep 2024 - Set up vite react app, build the home screen selection page
 ```
 
 ## Acknowledgments
