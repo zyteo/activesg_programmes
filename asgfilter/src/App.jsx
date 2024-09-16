@@ -4,12 +4,15 @@ import Attribution from "./Components/Attribution";
 import axios from "axios";
 import Home from "./Components/Home";
 import Loading from "./Components/Loading";
+import Results from "./Components/Results";
 
 function App() {
   const [venues, setVenues] = useState([]);
   const [userSelectedVenues, setUserSelectedVenues] = useState([]);
   const [sportsList, setSportsList] = useState([]);
   const [results, setResults] = useState([]);
+  const [screen, setScreen] = useState("Home");
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     axios.get(`https://asgfilter-be.vercel.app/api/venues`).then((response) => {
@@ -26,17 +29,34 @@ function App() {
 
   return (
     <>
-      <Home
-        venues={venues}
-        setUserSelectedVenues={setUserSelectedVenues}
-        userSelectedVenues={userSelectedVenues}
-      />
+      {screen === "Home" ? (
+        <Home
+          venues={venues}
+          setUserSelectedVenues={setUserSelectedVenues}
+          userSelectedVenues={userSelectedVenues}
+          setScreen={setScreen}
+          setLoader={setLoader}
+          loader={loader}
+        />
+      ) : null}
+      {screen === "Loading" ? (
+        <Loading
+          sportsList={sportsList}
+          userSelectedVenues={userSelectedVenues}
+          setResults={setResults}
+          setScreen={setScreen}
+          loader={loader}
+        />
+      ) : null}
 
-      <Loading
-        sportsList={sportsList}
-        userSelectedVenues={userSelectedVenues}
-        setResults={setResults}
-      />
+      {screen === "Results" ? (
+        <Results
+          results={results}
+          setResults={setResults}
+          setScreen={setScreen}
+        />
+      ) : null}
+
       <Attribution />
     </>
   );

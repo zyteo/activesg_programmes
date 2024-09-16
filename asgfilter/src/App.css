@@ -69,3 +69,7 @@
     transform: rotate(360deg);
   }
 }
+
+.box {
+  border: white 1px solid;
+}

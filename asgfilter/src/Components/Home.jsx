@@ -1,6 +1,13 @@
 import React from "react";
 
-function Home({ venues, setUserSelectedVenues, userSelectedVenues }) {
+function Home({
+  venues,
+  setUserSelectedVenues,
+  userSelectedVenues,
+  setScreen,
+  setLoader,
+  loader
+}) {
   return (
     <>
       <h1>Active SG Filter</h1>
@@ -30,7 +37,16 @@ function Home({ venues, setUserSelectedVenues, userSelectedVenues }) {
           </div>
         ))}
       </div>
-      {userSelectedVenues.length > 0 ? <button>Find</button> : null}
+      {userSelectedVenues.length > 0 ? (
+        <button
+          onClick={() => {
+            setScreen("Loading");
+            setLoader(!loader);
+          }}
+        >
+          Find
+        </button>
+      ) : null}
 
       <hr></hr>
     </>
