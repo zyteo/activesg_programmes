@@ -5,29 +5,6 @@ const masterList = [];
 const sample = [];
 
 
-getVenues()
-  .then((data) => {
-    // console.log(JSON.stringify(data.result.data.json));
-    for (let i = 0; i < data.result.data.json.length; i++) {
-      // console.log(data.result.data.json[i]);
-      venuesList.push(data.result.data.json[i].name);
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-getSports()
-  .then((data) => {
-    // console.log(JSON.stringify(data.result.data.json));
-    for (let i = 0; i < data.result.data.json.length; i++) {
-      // console.log(data.result.data.json[i]);
-      allSportsNames.push(data.result.data.json[i].name);
-    }
-    getFilteredActivities();
-  })
-  .catch((error) => {
-    console.log(error);
-  });
 const getFilteredActivities = () => {
   for (let i = 0; i < allSportsNames.length; i++) {
     // for (let i = 0; i < 1; i++) {

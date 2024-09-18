@@ -6,15 +6,15 @@ function Home({
   userSelectedVenues,
   setScreen,
   setLoader,
-  loader
+  loader,
 }) {
   return (
     <>
       <h1>Active SG Filter</h1>
       <div>
         {venues.map((venue) => (
-          <div key={venue.id}>
-            <p>{venue.name}</p>
+          <div className="venue" key={venue.id}>
+            <p className="venue-text">{venue.name}</p>
             {userSelectedVenues.includes(venue.id) ? (
               <button
                 onClick={() =>
@@ -44,7 +44,7 @@ function Home({
             setLoader(!loader);
           }}
         >
-          Find
+          Find Activities
         </button>
       ) : null}
 

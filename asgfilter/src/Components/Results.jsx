@@ -5,6 +5,7 @@ function Results({ results, setResults, setScreen }) {
     <div>
       <h1>Results</h1>
       {results.map((result) => (
+        var i = 0;
         <div className="box" key={result.id}>
           <h5>{result.title}</h5>
           <p>{result.venue.name}</p>
@@ -16,27 +17,25 @@ function Results({ results, setResults, setScreen }) {
           </p>
 
           <p>Session(s)</p>
-          {result.sessions.map(
-            (session) => (
-              console.log(session),
-              (
-                <div>
-                  Start: &nbsp;
-                  <Datetimeformat
-                    dateTime={session.startDateTime}
-                    dateTimeFormat={"Pp"}
-                  />
-                  &nbsp; End:&nbsp;
-                  <Datetimeformat
-                    dateTime={session.endDateTime}
-                    dateTimeFormat={"Pp"}
-                  />
-                </div>
-              )
-            )
-          )}
+          {result.sessions.map((session) => (
+            // console.log(session),
+            <div>
+              Start: &nbsp;
+              <Datetimeformat
+                dateTime={session.startDateTime}
+                dateTimeFormat={"Pp"}
+              />
+              &nbsp; End:&nbsp;
+              <Datetimeformat
+                dateTime={session.endDateTime}
+                dateTimeFormat={"Pp"}
+              />
+            </div>
+          ))}
         </div>
       ))}
+
+      {results.length === 0 ? <p>No results found.</p> : null}
       <button
         onClick={() => {
           setScreen("Home");

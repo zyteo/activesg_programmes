@@ -1,3 +1,9 @@
+:root {
+  --primary: #646cff;
+  --secondary: white;
+  --font-size: 14px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -71,5 +77,27 @@
 }
 
 .box {
-  border: white 1px solid;
+  border: var(--secondary) 1px solid;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.venue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: var(--secondary) 1px solid;
+  border-radius: 10px;
+  font-size: var(--font-size);
+  width: 100%;
+  height: fit-content;
+}
+
+.venue-text {
+  padding-left: 4px;
+}
+button {
+  font-size: var(--font-size);
+  min-height: fit-content;
 }

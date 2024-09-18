@@ -35,17 +35,20 @@ function Loading({
                 response.data.result.data.json.programmes[i].venue.id
               )
             ) {
-              console.log(response.data.result.data.json);
+              // console.log(response.data.result.data.json);
               setResults((results) => [
                 ...results,
                 response.data.result.data.json.programmes[i],
               ]);
+              
             }
           }
         });
-      if (i === sportsList.length - 1) {
-        setScreen("Results");
-      }
+        if (i === sportsList.length - 1) {
+          setScreen("Results");
+          console.log("results");
+        }
+      
     }
   }, [loader]);
 

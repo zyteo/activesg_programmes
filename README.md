@@ -36,6 +36,10 @@ Technologies used to build this project.
 14 Sep 2024 - Build backend for API
 
 15 Sep 2024 - Set up vite react app, build the home screen selection page
+
+16 Sep 2024 - Build loading and results screen. Basic app functionality complete.
+
+18 Sep 2024 - Adjust styling.
 ```
 
 ## Acknowledgments
