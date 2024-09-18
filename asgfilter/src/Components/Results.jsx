@@ -5,7 +5,6 @@ function Results({ results, setResults, setScreen }) {
     <div>
       <h1>Results</h1>
       {results.map((result) => (
-        var i = 0;
         <div className="box" key={result.id}>
           <h5>{result.title}</h5>
           <p>{result.venue.name}</p>
