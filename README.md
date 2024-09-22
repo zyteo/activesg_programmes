@@ -18,9 +18,9 @@ Looking for weekend programmes + meeting in the middle as much as possible
 Technologies used to build this project.
 
 ```
-- html
-- css
-- javascript
+- React
+- Axios
+- date-fns
 ```
 
 
@@ -40,6 +40,8 @@ Technologies used to build this project.
 16 Sep 2024 - Build loading and results screen. Basic app functionality complete.
 
 18 Sep 2024 - Adjust styling.
+
+22 Sep 2024 - Adjust styling and modified loading.jsx to display loader properly.
 ```
 
 ## Acknowledgments

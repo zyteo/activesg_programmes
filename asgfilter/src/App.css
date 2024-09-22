@@ -47,6 +47,9 @@
   color: #888;
 }
 
+.loading {
+  display: inline-block;
+}
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -100,4 +103,14 @@
 button {
   font-size: var(--font-size);
   min-height: fit-content;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+}
+.codelink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
