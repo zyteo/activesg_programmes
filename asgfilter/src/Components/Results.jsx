@@ -12,23 +12,38 @@ function Results({ results, setResults, setScreen }) {
           <p>{result.venue.intensityLevel}</p>
 
           <p>
-            Participants: &nbsp; {result.participantCount}/{result.maxCapacity}
+            Participants:&nbsp;{result.participantCount}/{result.maxCapacity}
           </p>
+          {result.sessions.length === 1 ? (
+            <p>Session:</p>
+          ) : (
+            <p>{result.sessions.length} Sessions:</p>
+          )}
 
-          <p>Session(s)</p>
           {result.sessions.map((session) => (
             // console.log(session),
             <div>
-              Start: &nbsp;
-              <Datetimeformat
-                dateTime={session.startDateTime}
-                dateTimeFormat={"Pp"}
-              />
-              &nbsp; End:&nbsp;
-              <Datetimeformat
-                dateTime={session.endDateTime}
-                dateTimeFormat={"Pp"}
-              />
+              <p>
+                <Datetimeformat
+                  dateTime={session.startDateTime}
+                  dateTimeFormat={"ccc"}
+                />
+                &nbsp;
+                <Datetimeformat
+                  dateTime={session.startDateTime}
+                  dateTimeFormat={"P"}
+                />
+                &nbsp;
+                <Datetimeformat
+                  dateTime={session.startDateTime}
+                  dateTimeFormat={"p"}
+                />
+                -
+                <Datetimeformat
+                  dateTime={session.endDateTime}
+                  dateTimeFormat={"p"}
+                />
+              </p>
             </div>
           ))}
         </div>

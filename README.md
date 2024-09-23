@@ -42,6 +42,8 @@ Technologies used to build this project.
 18 Sep 2024 - Adjust styling.
 
 22 Sep 2024 - Adjust styling and modified loading.jsx to display loader properly.
+
+23 Sep 2024 - Adjust session & date display
 ```
 
 ## Acknowledgments
