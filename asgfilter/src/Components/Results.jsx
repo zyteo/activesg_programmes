@@ -56,7 +56,7 @@ function Results({ results, setResults, setScreen }) {
           setResults([]);
         }}
       >
-        Reset
+        Back
       </button>
     </div>
   );

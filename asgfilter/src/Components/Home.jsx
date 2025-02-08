@@ -1,6 +1,7 @@
 import React from "react";
 
 function Home({
+  venueLoader,
   venues,
   setUserSelectedVenues,
   userSelectedVenues,
@@ -11,6 +12,12 @@ function Home({
   return (
     <>
       <h1>Active SG Filter</h1>
+      {venueLoader === true ? (
+        <div className="loading">
+          <div className="loader"></div>
+          <p>Loading...</p>
+        </div>
+      ) : null}
       <div>
         {venues.map((venue) => (
           <div className="venue" key={venue.id}>

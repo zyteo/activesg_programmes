@@ -1,17 +1,14 @@
-
 <!-- ZY, 30 Aug 2024 -->
 
 # ZY's ActiveSG Filter
 
-My own personal ActiveSG Programmes filter based on personal use case.
+Singapore's ActiveSG Programmes filter based on my personal use case.
 
 ## Description
 
-My dear friend and I want to search for ActiveSG programmes based on 2 things:
+This app searches for ActiveSG programmes based on 2 things:
 
-The day + the location. 
-
-Looking for weekend programmes + meeting in the middle as much as possible
+Weekends + Location
 
 ### Technology Used
 
@@ -22,7 +19,6 @@ Technologies used to build this project.
 - Axios
 - date-fns
 ```
-
 
 ---
 
@@ -44,10 +40,12 @@ Technologies used to build this project.
 22 Sep 2024 - Adjust styling and modified loading.jsx to display loader properly.
 
 23 Sep 2024 - Adjust session & date display
+
+2 Feb 2025 - Added loader for main screen as venue loading can take some time.
 ```
 
 ## Acknowledgments
 
-I thank the team at OGP for allowing me to utilise their API.
+I thank the team at OGP for allowing me to tap on their API.
 
 ---

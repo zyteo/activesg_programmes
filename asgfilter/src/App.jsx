@@ -7,6 +7,7 @@ import Loading from "./Components/Loading";
 import Results from "./Components/Results";
 
 function App() {
+  const [venueLoader, setVenueLoader] = useState(true);
   const [venues, setVenues] = useState([]);
   const [userSelectedVenues, setUserSelectedVenues] = useState([]);
   const [sportsList, setSportsList] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   useEffect(() => {
     axios.get(`https://asgfilter-be.vercel.app/api/venues`).then((response) => {
       setVenues(response.data.result.data.json);
+      setVenueLoader(false);
     });
 
     axios
@@ -31,6 +33,7 @@ function App() {
     <>
       {screen === "Home" ? (
         <Home
+          venueLoader={venueLoader}
           venues={venues}
           setUserSelectedVenues={setUserSelectedVenues}
           userSelectedVenues={userSelectedVenues}
