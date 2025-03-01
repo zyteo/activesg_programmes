@@ -49,6 +49,17 @@ app.get("/api/activity", async (req, res) => {
     res.status(500).json({ error: error });
   }
 });
+app.get("/api/capacity", async (req, res) => {
+  try {
+    const response = await fetch(
+      `https://activesg.gov.sg/api/trpc/pass.getFacilityCapacities?input=%7B%22json%22%3Anull%2C%22meta%22%3A%7B%22values%22%3A%5B%22undefined%22%5D%7D%7D`
+    );
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}.`);
