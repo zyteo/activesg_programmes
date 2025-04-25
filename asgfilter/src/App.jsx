@@ -27,6 +27,11 @@ function App() {
         setSportsList(response.data.result.data.json);
         console.log(response.data.result.data.json);
       });
+    axios
+      .get(`https://asgfilter-be.vercel.app/api/capacity`)
+      .then((response) => {
+        console.log(response.data.result.data.json);
+      });
   }, []);
 
   return (
