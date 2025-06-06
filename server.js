@@ -12,7 +12,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.send("Express server running");
 });
 
 app.get("/api/venues", async (req, res) => {
@@ -66,4 +66,4 @@ app.listen(PORT, () => {
 });
 
 // Export the Express API
-module.exports = app;
+// module.exports = app;
